@@ -1,6 +1,13 @@
 /*
     emd.c
 
+    notes added by Guan: 
+    there is one change to this file, which is adding a distance function in the end
+    I found it's troublesome to write the 'dist' function in Go and pass it as a 
+    function pointer to a C function, since Go address cannot be directly given to C.
+    See https://github.com/golang/go/wiki/cgo for more information.
+
+    original notes:
     Last update: 3/14/98
 
     An implementation of the Earth Movers Distance.
