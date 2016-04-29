@@ -56,7 +56,8 @@ typedef struct node2_t {
   struct node2_t *NextR;               /* NEXT ROW */
 } node2_t;
 
-
+/* the length of word vector */
+static int VEC_LEN = 200;
 
 /* GLOBAL VARIABLE DECLARATION */
 static int _n1, _n2;                          /* SIGNATURES SIZES */
@@ -864,9 +865,21 @@ static void printSolution()
 }
 
 /* distance function */
+float dist(feature_t *F1, feature_t *F2) {
+  float sq = 0.0;
+  for(int i = 0; i < VEC_LEN; i++) {
+  //  printf("F1 current value: %f\n", *(F1->arr + i));
+    float tmp = (*(F1->arr + i)) - (*(F2->arr + i));
+    sq += tmp * tmp;
+  }
+  return sqrt(sq);
+}
+/*
 float dist(feature_t *F1, feature_t *F2)
 {
 	  int dX = F1->X - F2->X, dY = F1->Y - F2->Y, dZ = F1->Z - F2->Z;
-	    return sqrt(dX*dX + dY*dY + dZ*dZ); 
+   
+      return sqrt(dX*dX + dY*dY + dZ*dZ); 
 }
+*/
 

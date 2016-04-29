@@ -25,8 +25,14 @@
 /*****************************************************************************/
 /* feature_t SHOULD BE MODIFIED BY THE USER TO REFLECT THE FEATURE TYPE      */
 //typedef int feature_t;
+/*
 typedef struct {
 	double X, Y, Z;
+} feature_t;
+*/
+
+typedef struct {
+	float *arr;
 } feature_t;
 /*****************************************************************************/
 
